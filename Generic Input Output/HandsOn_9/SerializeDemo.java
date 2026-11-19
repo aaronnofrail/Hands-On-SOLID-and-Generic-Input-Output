@@ -5,6 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +38,9 @@ public class SerializeDemo {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        String filename = "emp.ser";
+        Path file = Paths.get("HandsOn_9", "emp.ser");
+        Files.createDirectories(file.getParent());
+        String filename = file.toString();
         List<Employee> list = new ArrayList<>();
         list.add(new Employee("John", 30));
         list.add(new Employee("Ayu", 24));

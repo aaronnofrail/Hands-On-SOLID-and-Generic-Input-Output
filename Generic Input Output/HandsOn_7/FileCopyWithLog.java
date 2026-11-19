@@ -12,11 +12,20 @@ import java.util.List;
 
 public class FileCopyWithLog {
     public static void main(String[] args) {
-        Path source = Paths.get("report.txt");
-        Path backup = Paths.get("backup/report.txt");
-        Path logFile = Paths.get("log.txt");
+        Path source = Paths.get("HandsOn_7", "report.txt");
+        Path backup = Paths.get("HandsOn_7", "backup", "report.txt");
+        Path logFile = Paths.get("HandsOn_7", "log.txt");
 
         try {
+            if (source.getParent() != null && Files.notExists(source.getParent())) {
+                Files.createDirectories(source.getParent());
+            }
+            Files.write(
+                source,
+                List.of("Report Generated", "Status: OK"),
+                StandardCharsets.UTF_8
+            );
+
             if (!Files.exists(source)) {
                 appendLog(logFile, LocalDateTime.now() + " - GAGAL: File sumber tidak ada (" + source + ")");
                 System.out.println("File sumber tidak ditemukan: " + source.toAbsolutePath());
