@@ -1,0 +1,10 @@
+*.class
+bin/
+Generic Input Output/HandsOn_6/copy_employees.txt
+Generic Input Output/HandsOn_7/backup/
+Generic Input Output/HandsOn_7/log.txt
+Generic Input Output/HandsOn_7/report.txt
+Generic Input Output/HandsOn_8/user_input.txt
+Generic Input Output/HandsOn_9/emp.ser
+Generic Input Output/HandsOn_10/produk_output.txt
+Generic Input Output/HandsOn_10/transaksi_output.txt

@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "SOLID",
+        "Generic Input Output"
+    ],
+    "java.project.outputPath": "bin"
+}
